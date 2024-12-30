@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum & Space Research Updates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #1e1e2f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        .team-section {
+            margin-bottom: 40px;
+        }
+        .team-section h2 {
+            color: #333;
+        }
+        .team-list {
+            list-style: none;
+            padding: 0;
+        }
+        .team-list li {
+            margin: 10px 0;
+        }
+        .update-section {
+            margin-bottom: 40px;
+        }
+        .update-section h2 {
+            color: #333;
+        }
+        .update-form {
+            margin-bottom: 20px;
+        }
+        .update-form textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .update-form button {
+            background-color: #1e1e2f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .updates {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quantum & Space Research Updates</h1>
+        <p>Explore the universe with daily research insights</p>
+    </header>
+    <main>
+        <section class="team-section">
+            <h2>Our Team</h2>
+            <ul class="team-list">
+                <li><strong>Parth Singh Baghel</strong> - Founder and President</li>
+                <li><strong>Aman Kumar Rai</strong> - Founder and CEO</li>
+            </ul>
+        </section>
+
+        <section class="update-section">
+            <h2>Daily Updates</h2>
+            <div class="update-form">
+                <textarea id="newUpdate" placeholder="Write your update here..."></textarea>
+                <button onclick="addUpdate()">Post Update</button>
+            </div>
+            <div id="updatesContainer">
+                <!-- Updates will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function addUpdate() {
+            const updateText = document.getElementById('newUpdate').value.trim();
+            if (!updateText) {
+                alert('Please write something before posting.');
+                return;
+            }
+
+            const updateContainer = document.getElementById('updatesContainer');
+            const updateDiv = document.createElement('div');
+            updateDiv.className = 'updates';
+            updateDiv.textContent = updateText;
+
+            updateContainer.prepend(updateDiv);
+            document.getElementById('newUpdate').value = '';
+        }
+    </script>
+</body>
+</html>
